@@ -433,6 +433,7 @@ private:
 		DRIVER_RM3100   =16,
         DRIVER_MSP      =17,
         DRIVER_SERIAL   =18,
+        DRIVER_AK8975   =19,
     };
 
     bool _driver_enabled(enum DriverType driver_type);
