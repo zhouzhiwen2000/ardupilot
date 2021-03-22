@@ -1,0 +1,60 @@
+# hw definition file for processing by chibios_hwdef.py
+# for H743 bootloader
+
+# MCU class and specific type
+MCU STM32H7xx STM32H743xx
+
+# crystal frequency
+OSCILLATOR_HZ 16000000
+
+# board ID for firmware load
+APJ_BOARD_ID 1050
+
+FLASH_SIZE_KB 2048
+
+# bootloader is installed at zero offset
+FLASH_RESERVE_START_KB 0
+
+# the location where the bootloader will load the ardupilot firmware
+# 128K for bootloader and 256K for param storage(what a waste of storage!)
+FLASH_BOOTLOADER_LOAD_KB 384
+#disable for now to prevent overheating
+PB1 HEATER OUTPUT LOW GPIO(0) 
+PA3 LED_R OUTPUT HIGH GPIO(2)
+PA2 LED_G OUTPUT HIGH GPIO(3)
+PA1 LED_B OUTPUT HIGH GPIO(4)
+define HAL_HAVE_PIXRACER_LED
+define HAL_GPIO_LED_ON  0
+define HAL_GPIO_LED_OFF 1
+
+# order of UARTs (and USB)
+SERIAL_ORDER OTG1 USART1
+
+PA11 OTG_FS_DM OTG1
+PA12 OTG_FS_DP OTG1
+
+PA13 JTMS-SWDIO SWD
+PA14 JTCK-SWCLK SWD
+
+# USART1 is telem1
+PA10 USART1_RX USART1
+PA9 USART1_TX USART1
+
+
+
+define HAL_USE_SERIAL TRUE
+
+#remember to remove this
+define HAL_USE_EMPTY_STORAGE 1
+define HAL_STORAGE_SIZE 16384
+
+# Add CS pins to ensure they are high in bootloader
+# sensor CS
+#SENSOR4
+PA4 AK8975_CS CS
+#SENSOR1
+PE15 BMI088_CS_G CS
+#SENSOR2
+PB11 BMI088_CS_A CS
+#SENSOR3
+PB10 SPL06_CS CS
