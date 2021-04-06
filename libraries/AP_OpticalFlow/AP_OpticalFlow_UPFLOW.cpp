@@ -50,14 +50,19 @@
 extern const AP_HAL::HAL& hal;
 
 // constructor
-AP_OpticalFlow_UPFLOW::AP_OpticalFlow_UPFLOW(OpticalFlow &_frontend, AP_HAL::UARTDriver *_uart) :
+AP_OpticalFlow_UPFLOW::AP_OpticalFlow_UPFLOW(const char *model_name,OpticalFlow &_frontend, AP_HAL::UARTDriver *_uart) :
     OpticalFlow_backend(_frontend),
     uart(_uart)
 {
+    if (strcmp(model_name, "LC302") == 0) {
+        sensor_model=LC302;
+    } else {
+        sensor_model=LC306;
+    }
 }
 
 // detect the device
-AP_OpticalFlow_UPFLOW *AP_OpticalFlow_UPFLOW::detect(OpticalFlow &_frontend)
+AP_OpticalFlow_UPFLOW *AP_OpticalFlow_UPFLOW::detect(const char *model_name,OpticalFlow &_frontend)
 {
     AP_SerialManager *serial_manager = AP::serialmanager().get_singleton();
     if (serial_manager == nullptr) {
@@ -71,7 +76,7 @@ AP_OpticalFlow_UPFLOW *AP_OpticalFlow_UPFLOW::detect(OpticalFlow &_frontend)
     }
 
     // we have found a serial port so use it
-    AP_OpticalFlow_UPFLOW *sensor = new AP_OpticalFlow_UPFLOW(_frontend, uart);
+    AP_OpticalFlow_UPFLOW *sensor = new AP_OpticalFlow_UPFLOW(model_name,_frontend, uart);
     return sensor;
 }
 
@@ -81,6 +86,9 @@ void AP_OpticalFlow_UPFLOW::init()
     // sanity check uart
     if (uart == nullptr) {
         return;
+    }
+    if (sensor_model==LC306) {
+
     }
     // open serial port with baud rate of 19200
     uart->begin(19200);

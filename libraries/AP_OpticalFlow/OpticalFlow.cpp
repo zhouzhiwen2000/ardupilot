@@ -14,13 +14,13 @@
 extern const AP_HAL::HAL& hal;
 
 #ifndef OPTICAL_FLOW_TYPE_DEFAULT
- #if CONFIG_HAL_BOARD_SUBTYPE == HAL_BOARD_SUBTYPE_CHIBIOS_SKYVIPER_F412 || defined(HAL_HAVE_PIXARTFLOW_SPI)
-  #define OPTICAL_FLOW_TYPE_DEFAULT OpticalFlowType::PIXART
- #elif CONFIG_HAL_BOARD_SUBTYPE == HAL_BOARD_SUBTYPE_LINUX_BEBOP
-  #define OPTICAL_FLOW_TYPE_DEFAULT OpticalFlowType::BEBOP
- #else
-  #define OPTICAL_FLOW_TYPE_DEFAULT OpticalFlowType::NONE
- #endif
+#if CONFIG_HAL_BOARD_SUBTYPE == HAL_BOARD_SUBTYPE_CHIBIOS_SKYVIPER_F412 || defined(HAL_HAVE_PIXARTFLOW_SPI)
+#define OPTICAL_FLOW_TYPE_DEFAULT OpticalFlowType::PIXART
+#elif CONFIG_HAL_BOARD_SUBTYPE == HAL_BOARD_SUBTYPE_LINUX_BEBOP
+#define OPTICAL_FLOW_TYPE_DEFAULT OpticalFlowType::BEBOP
+#else
+#define OPTICAL_FLOW_TYPE_DEFAULT OpticalFlowType::NONE
+#endif
 #endif
 
 const AP_Param::GroupInfo OpticalFlow::var_info[] = {
@@ -102,7 +102,7 @@ OpticalFlow::OpticalFlow()
 
 void OpticalFlow::init(uint32_t log_bit)
 {
-     _log_bit = log_bit;
+    _log_bit = log_bit;
 
     // return immediately if not enabled or backend already created
     if ((_type == (int8_t)OpticalFlowType::NONE) || (backend != nullptr)) {
@@ -143,7 +143,7 @@ void OpticalFlow::init(uint32_t log_bit)
 #endif
         break;
     case OpticalFlowType::UPFLOW:
-        backend = AP_OpticalFlow_UPFLOW::detect(*this);
+        backend = AP_OpticalFlow_UPFLOW::detect("LC302",*this);
         break;
     case OpticalFlowType::SITL:
 #if CONFIG_HAL_BOARD == HAL_BOARD_SITL
@@ -224,12 +224,12 @@ void OpticalFlow::Log_Write_Optflow()
 
     struct log_Optflow pkt = {
         LOG_PACKET_HEADER_INIT(LOG_OPTFLOW_MSG),
-        time_us         : AP_HAL::micros64(),
-        surface_quality : _state.surface_quality,
-        flow_x          : _state.flowRate.x,
-        flow_y          : _state.flowRate.y,
-        body_x          : _state.bodyRate.x,
-        body_y          : _state.bodyRate.y
+time_us         : AP_HAL::micros64(),
+surface_quality : _state.surface_quality,
+flow_x          : _state.flowRate.x,
+flow_y          : _state.flowRate.y,
+body_x          : _state.bodyRate.x,
+body_y          : _state.bodyRate.y
     };
     logger->WriteBlock(&pkt, sizeof(pkt));
 }
@@ -239,7 +239,8 @@ void OpticalFlow::Log_Write_Optflow()
 // singleton instance
 OpticalFlow *OpticalFlow::_singleton;
 
-namespace AP {
+namespace AP
+{
 
 OpticalFlow *opticalflow()
 {
