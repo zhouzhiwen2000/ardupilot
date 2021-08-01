@@ -209,9 +209,6 @@ bool AP_Compass_AK8975::_check_id()
             deviceid == AK8975_Device_ID) {
             return true;
         }
-	else{
-	hal.console->printf("ID=%d\n",deviceid);
-	}
     }
 
     return false;

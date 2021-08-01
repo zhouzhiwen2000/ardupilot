@@ -73,6 +73,7 @@ public:
         DEVTYPE_AK09915 = 0x15,
         DEVTYPE_MMC5883 = 0x16,
         DEVTYPE_AK8975 = 0x17,
+        DEVTYPE_FXOS8700 = 0x18,
     };
 
 #if AP_COMPASS_MSP_ENABLED
