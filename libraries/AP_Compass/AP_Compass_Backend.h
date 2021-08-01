@@ -66,6 +66,7 @@ public:
         DEVTYPE_RM3100_2 = 0x12, // unused, past mistake
         DEVTYPE_MMC5883 = 0x13,
         DEVTYPE_AK8975 = 0x14,
+        DEVTYPE_FXOS8700 = 0x15,
     };
 
 #if HAL_MSP_COMPASS_ENABLED

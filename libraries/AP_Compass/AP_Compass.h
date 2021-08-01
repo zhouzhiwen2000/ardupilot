@@ -10,6 +10,7 @@
 #include <GCS_MAVLink/GCS_MAVLink.h>
 #include <AP_MSP/msp.h>
 #include <AP_ExternalAHRS/AP_ExternalAHRS.h>
+#include <AP_HAL/utility/sparse-endian.h>
 
 #include "AP_Compass_Backend.h"
 #include "Compass_PerMotor.h"
@@ -427,6 +428,7 @@ private:
         DRIVER_SERIAL   =18,
         DRIVER_MMC5XX3  =19,
         DRIVER_AK8975   =20,
+        DRIVER_FXOS8700   =21,
     };
 
     bool _driver_enabled(enum DriverType driver_type);

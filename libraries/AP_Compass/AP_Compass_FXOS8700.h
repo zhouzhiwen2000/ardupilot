@@ -12,24 +12,24 @@
 class AuxiliaryBus;
 class AuxiliaryBusSlave;
 class AP_InertialSensor;
-class AP_AK8975_BusDriver;
+class AP_FXOS8700_BusDriver;
 
-class AP_Compass_AK8975 : public AP_Compass_Backend
+class AP_Compass_FXOS8700 : public AP_Compass_Backend
 {
 public:
-    /* Probe for AK8975 standalone on I2C/SPI bus */
+    /* Probe for FXOS8700 standalone on I2C/SPI bus */
     static AP_Compass_Backend *probe(AP_HAL::OwnPtr<AP_HAL::Device> dev,
                                      bool force_external,
                                      enum Rotation rotation);
 
-    static constexpr const char *name = "AK8975";
+    static constexpr const char *name = "FXOS8700";
 
-    virtual ~AP_Compass_AK8975();
+    virtual ~AP_Compass_FXOS8700();
 
     void read() override;
 
 private:
-    AP_Compass_AK8975(AP_AK8975_BusDriver *bus,
+    AP_Compass_FXOS8700(AP_FXOS8700_BusDriver *bus,
                       bool force_external,
                       enum Rotation rotation);
 
@@ -43,7 +43,7 @@ private:
 
     void _update();
 
-    AP_AK8975_BusDriver *_bus;
+    AP_FXOS8700_BusDriver *_bus;
 
     float _magnetometer_ASA[3] {0, 0, 0};
 
@@ -53,10 +53,10 @@ private:
     bool _force_external;
 };
 
-class AP_AK8975_BusDriver
+class AP_FXOS8700_BusDriver
 {
 public:
-    virtual ~AP_AK8975_BusDriver() { }
+    virtual ~AP_FXOS8700_BusDriver() { }
 
     virtual bool block_read(uint8_t reg, uint8_t *buf, uint32_t size) = 0;
     virtual bool register_read(uint8_t reg, uint8_t *val) = 0;
@@ -75,10 +75,10 @@ public:
     virtual uint32_t get_bus_id(void) const = 0;
 };
 
-class AP_AK8975_BusDriver_HALDevice: public AP_AK8975_BusDriver
+class AP_FXOS8700_BusDriver_HALDevice: public AP_FXOS8700_BusDriver
 {
 public:
-    AP_AK8975_BusDriver_HALDevice(AP_HAL::OwnPtr<AP_HAL::Device> dev);
+    AP_FXOS8700_BusDriver_HALDevice(AP_HAL::OwnPtr<AP_HAL::Device> dev);
 
     virtual bool block_read(uint8_t reg, uint8_t *buf, uint32_t size) override;
     virtual bool register_read(uint8_t reg, uint8_t *val) override;
