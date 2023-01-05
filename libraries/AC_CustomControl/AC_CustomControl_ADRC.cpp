@@ -64,115 +64,115 @@ const AP_Param::GroupInfo AC_CustomControl_ADRC::var_info[] = {
     // @DisplayName: b for roll
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_R_b", 1, AC_CustomControl_ADRC, R_b, 5.5f),
+    AP_GROUPINFO("ADRC_R_b", 10, AC_CustomControl_ADRC, R_b, 5.5f),
 
     // @Param: PARAM2
     // @DisplayName: Empty param2
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_R_P1", 2, AC_CustomControl_ADRC, R_P1, 15.0f),
+    AP_GROUPINFO("ADRC_R_P1", 11, AC_CustomControl_ADRC, R_P1, 15.0f),
 
     // @Param: PARAM3
     // @DisplayName: Empty param3
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_R_P2", 3, AC_CustomControl_ADRC, R_P2, 15.0f),
+    AP_GROUPINFO("ADRC_R_P2", 12, AC_CustomControl_ADRC, R_P2, 15.0f),
 
     // @Param: PARAM3
     // @DisplayName: Empty param3
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_R_P3", 4, AC_CustomControl_ADRC, R_P3, 15.0f),
+    AP_GROUPINFO("ADRC_R_P3", 13, AC_CustomControl_ADRC, R_P3, 15.0f),
 
     // @Param: PARAM3
     // @DisplayName: Empty param3
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_R_P4", 5, AC_CustomControl_ADRC, R_P4, 15.0f),
+    AP_GROUPINFO("ADRC_R_P4", 14, AC_CustomControl_ADRC, R_P4, 15.0f),
 
     // @Param: PARAM3
     // @DisplayName: Empty param3
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_R_TD4P1", 6, AC_CustomControl_ADRC, R_TD4P1, 25.0f),
+    AP_GROUPINFO("ADRC_R_TD4P1", 15, AC_CustomControl_ADRC, R_TD4P1, 25.0f),
 
     // @Param: PARAM3
     // @DisplayName: Empty param3
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_R_TD4P2", 7, AC_CustomControl_ADRC, R_TD4P2, 25.0f),
+    AP_GROUPINFO("ADRC_R_TD4P2", 16, AC_CustomControl_ADRC, R_TD4P2, 25.0f),
 
     // @Param: PARAM3
     // @DisplayName: Empty param3
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_R_TD4P3", 8, AC_CustomControl_ADRC, R_TD4P3, 25.0f),
+    AP_GROUPINFO("ADRC_R_TD4P3", 17, AC_CustomControl_ADRC, R_TD4P3, 25.0f),
 
     // @Param: PARAM3
     // @DisplayName: Empty param3
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_R_TD4P4", 9, AC_CustomControl_ADRC, R_TD4P4, 25.0f),
+    AP_GROUPINFO("ADRC_R_TD4P4", 18, AC_CustomControl_ADRC, R_TD4P4, 25.0f),
 
    // @Param: ADRC_Y_b
     // @DisplayName: b for yaw
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_Y_b", 1, AC_CustomControl_ADRC, Y_b, 1.0f),
+    AP_GROUPINFO("ADRC_Y_b", 19, AC_CustomControl_ADRC, Y_b, 1.0f),
 
     // @Param: PARAM2
     // @DisplayName: Empty param2
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_Y_P1", 2, AC_CustomControl_ADRC, Y_P1, 15.0f),
+    AP_GROUPINFO("ADRC_Y_P1", 20, AC_CustomControl_ADRC, Y_P1, 15.0f),
 
     // @Param: PARAM3
     // @DisplayName: Empty param3
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_Y_P2", 3, AC_CustomControl_ADRC, Y_P2, 15.0f),
+    AP_GROUPINFO("ADRC_Y_P2", 21, AC_CustomControl_ADRC, Y_P2, 15.0f),
 
     // @Param: PARAM3
     // @DisplayName: Empty param3
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_Y_P3", 4, AC_CustomControl_ADRC, Y_P3, 15.0f),
+    AP_GROUPINFO("ADRC_Y_P3", 22, AC_CustomControl_ADRC, Y_P3, 15.0f),
 
     // @Param: PARAM3
     // @DisplayName: Empty param3
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_Y_P4", 5, AC_CustomControl_ADRC, Y_P4, 15.0f),
+    AP_GROUPINFO("ADRC_Y_P4", 23, AC_CustomControl_ADRC, Y_P4, 15.0f),
 
     // @Param: PARAM3
     // @DisplayName: Empty param3
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_Y_TD4P1", 6, AC_CustomControl_ADRC, Y_TD4P1, 25.0f),
+    AP_GROUPINFO("ADRC_Y_TD4P1", 24, AC_CustomControl_ADRC, Y_TD4P1, 25.0f),
 
     // @Param: PARAM3
     // @DisplayName: Empty param3
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_Y_TD4P2", 7, AC_CustomControl_ADRC, Y_TD4P2, 10.0f),
+    AP_GROUPINFO("ADRC_Y_TD4P2", 25, AC_CustomControl_ADRC, Y_TD4P2, 10.0f),
 
     // @Param: PARAM3
     // @DisplayName: Empty param3
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_Y_TD4P3", 8, AC_CustomControl_ADRC, Y_TD4P3, 25.0f),
+    AP_GROUPINFO("ADRC_Y_TD4P3", 26, AC_CustomControl_ADRC, Y_TD4P3, 25.0f),
 
     // @Param: PARAM3
     // @DisplayName: Empty param3
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_Y_TD4P4", 9, AC_CustomControl_ADRC, Y_TD4P4, 25.0f),
+    AP_GROUPINFO("ADRC_Y_TD4P4", 27, AC_CustomControl_ADRC, Y_TD4P4, 25.0f),
 
     // @Param: PARAM3
     // @DisplayName: Empty param3
     // @Description: Dumy parameter for empty custom controller backend
     // @User: Advanced
-    AP_GROUPINFO("ADRC_Motor_T", 9, AC_CustomControl_ADRC, Motor_T, 0.1f),
+    AP_GROUPINFO("ADRC_Motor_T", 28, AC_CustomControl_ADRC, Motor_T, 0.1f),
 
     AP_GROUPEND
 };
@@ -227,7 +227,7 @@ AC_CustomControl_ADRC::AC_CustomControl_ADRC(AC_CustomControl& frontend, AP_AHRS
     //初始化姿态ESO
     ESO[0].init( Motor_T , R_b , 0.7f , 10 , 500 , 5000 );//roll
     ESO[1].init( Motor_T , P_b , 0.7f , 10 , 500 , 5000 );//pitch
-    ESO[2].init( 1.0f/200 , Y_b , 0.7f , 10 , 200 , 200 );//yaw
+    ESO[2].init( 1.0f/AP::scheduler().get_loop_rate_hz() , Y_b , 0.7f , 10 , AP::scheduler().get_loop_rate_hz() , AP::scheduler().get_loop_rate_hz() );//yaw
 
 }
 
@@ -348,6 +348,19 @@ Vector3f AC_CustomControl_ADRC::update(void)
     motor_out.x = 	( (float)(ESO[0].get_EsMainPower()) + ESO[0].T * ( angular_acceleration_error.x * P3.x + Ta1.x /*- disturbance_x*/ ) )/ESO[0].b;
     motor_out.y =	( (float)(ESO[1].get_EsMainPower()) + ESO[1].T * ( angular_acceleration_error.y * P3.y + Ta1.y /*- disturbance_y*/ ) )/ESO[1].b;
     motor_out.z = ( target_angular_acceleration.z - disturbance.z ) / ESO[2].b;
+
+    ESO[0].update_u( motor_out.x );
+    ESO[1].update_u( motor_out.y );
+    ESO[2].update_u( motor_out.z );
+    
+    AP::logger().Write("ESO", "TimeUS,RollR,PitchR,YawR,RollG,PitchG,YawG", "Qffffff",
+                                       AP_HAL::micros64(),
+                                       (double)angular_rate_ESO.z,
+                                       (double)target_angular_rate_Y,
+                                       (double)ESO[2].get_EsAngularAcceleration(),
+                                       (double)target_angular_acceleration.z,
+                                       (double)disturbance.z,
+                                       (double)motor_out.z);
     return motor_out;
 }
 
@@ -361,6 +374,10 @@ void AC_CustomControl_ADRC::reset(void)
     ESO[0].reset();
     ESO[1].reset();
     ESO[2].reset();
+    disturbance_filter[0].reset();
+    disturbance_filter[1].reset();
+    disturbance_filter[2].reset();
+
 }
 
 #endif
