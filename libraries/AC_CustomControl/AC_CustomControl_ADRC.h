@@ -23,9 +23,9 @@ public:
     static const struct AP_Param::GroupInfo var_info[];
 protected:
 
-    AC_ADRC _rate_roll_cont;
-    AC_ADRC _rate_pitch_cont;
-    AC_ADRC _rate_yaw_cont;
+    Vector3f calculate_att_error(Quaternion target, Quaternion measurment);
+    AC_ADRC _roll_cont;
+    AC_ADRC _pitch_cont;
 };
 
 #endif
