@@ -1,13 +1,13 @@
 #include <AP_Math/AP_Math.h>
 #include "AC_ADRC.h"
 
-#define sin_45 0.70711f
-#define cR     718.078f
-#define cT     1.23884e-5
-#define L      0.255f
-#define d_1      88.448f
-#define Ixx_yy 0.016f
-static float b_const = 8.0f*cR*cT*L*sin_45;
+// #define sin_45 0.70711f
+// #define cR     718.078f
+// #define cT     1.23884e-5
+// #define L      0.255f
+// #define d_1      88.448f
+// #define Ixx_yy 0.016f
+// static float b_const = 8.0f*cR*cT*L*sin_45;
 
 // table of user settable parameters
 const AP_Param::GroupInfo AC_ADRC::var_info[] = {
@@ -143,9 +143,8 @@ void AC_ADRC::adrc_att_observer_update(const float gyr, float bth)
 	float bt = bth;
 	// do not let base_throttle to be too small or too large
 	constrain_float(bt, 0.3f, 0.7f);
-	float b0 = b_const*(cR*bt+d_1)/Ixx_yy;
-	//float b0 = PARAM_GET_FLOAT(ADRC_ATT, B0);
-	_leso.b0 = b0;
+	// float b0 = b_const*(cR*bt+d_1)/Ixx_yy;
+	_leso.b0 = b_0;
 	
 	/* observer update */
 	_leso.run(gyr);
