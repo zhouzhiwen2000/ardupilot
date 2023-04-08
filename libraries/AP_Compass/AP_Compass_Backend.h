@@ -73,6 +73,8 @@ public:
         DEVTYPE_MMC5983 = 0x13,
         DEVTYPE_AK09918 = 0x14,
         DEVTYPE_AK09915 = 0x15,
+        DEVTYPE_MMC5883 = 0x16,
+        DEVTYPE_AK8975 = 0x17,
     };
 
 #if AP_COMPASS_MSP_ENABLED
